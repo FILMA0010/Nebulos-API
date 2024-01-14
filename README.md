@@ -45,7 +45,7 @@ GET /api/images/${category}
  `string` | **Required**. Name of category to fetch |
  
 ```http
-GET /api/image/categories
+GET /api/images/categories
 ```
 
 | Type     | Description                |
