@@ -77,17 +77,6 @@ python main.py
 ```
 
 
-## Usage/Examples
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-
 ## License
 
 [Apache](https://github.com/FILMA0010/Nebulos-API/blob/main/LICENSE)
