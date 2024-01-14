@@ -3,8 +3,19 @@ from flask import Flask, jsonify, send_from_directory, render_template, render_t
 import os
 import ssl
 import random
+import logging
 
 app = Flask(__name__)
+
+# Erstelle einen Logger mit dem Namen `app`
+logger = logging.getLogger('app')
+
+# Setze die Ausgabe des Loggers auf die Datei `app.log`
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler('app.log')
+handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s'))
+logger.addHandler(handler)
+
 
 @app.route('/api/images/<ordnername>')
 def showimage(ordnername):
@@ -70,12 +81,12 @@ def zeige_datei2(filename):
     return render_template_string(inhalt)
 
 
-@app.route('/docs/')
+@app.route('/')
 def zeige_index():
     return send_from_directory('docs/files', 'index.html')
 
 if __name__ == '__main__':
     ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    ssl_context.load_cert_chain(certfile='/etc/letsencrypt/live/api.nebulos.pro/fullchain.pem', keyfile='/etc/letsencrypt/live/api.nebulos.pro/privkey.pem')
-    app.run()
+    #ssl_context.load_cert_chain(certfile='/etc/letsencrypt/live/api.nebulos.pro/fullchain.pem', keyfile='/etc/letsencrypt/live/api.nebulos.pro/privkey.pem')
+    app.run(port='3000', host='0.0.0.0')
 #    app.run(ssl_context=ssl_context, host='0.0.0.0', port=5000)
