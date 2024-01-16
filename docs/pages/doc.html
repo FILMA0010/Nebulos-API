@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NebulosAPI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/scribbler-global.css">
+    <link rel="stylesheet" href="/docs/scribbler-doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">Nebulos<span class="logo__thin">API</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="https://github.com/FILMA0010/Nebulos-API" class="link link--dark"><i class="fa-brands fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="../../" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Get Started</li>
+          <li class="js-btn">API Values</li>
+          <li class="js-btn">Issues</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">Get Started</h3>
+          <p>API Endpoints</p>
+          <h3 class="section__title">Use Image API</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/images/${category}
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Get Image API categories</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/images/categories
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Use Text API</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/text/${category}
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Get Text API Categories</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/text/categories
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Use Roblox API</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/roblox/{category}/${id}
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Get Roblox API Categories</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/roblox/categories
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Use Minecraft Server API</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/minecraft/server/${version}/${adress}
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Use Minecraft User API</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/minecraft/${uuid}
+              </code>
+            </pre>
+          </div>
+          <h3 class="section__title">Get Minecraft API Categories</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <b>GET</b> https://api.nebulos.pro:3000/api/minecraft/categories
+              </code>
+            </pre>
+          </div>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">API Values</h3>
+          <table id="customers">
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+              <th>Required</th>
+            </tr>
+            <tr>
+              <td>${category}</td>
+              <td>Category of the API</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>${id}</td>
+              <td>ID of user/group</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>${adress}</td>
+              <td>Adress [Domain or IP Adress]</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>${version}</td>
+              <td>Minecraft Bedrock/Java</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>${uuid}</td>
+              <td>Minecraft UUID</td>
+              <td>true</td>
+            </tr>
+          </table>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Issues</h3>
+          <p>You got Issues by using the API?</p>
+          <p>Contact us via<a class="link link--dark" href="https://discord.gg/Eydw6U4J"> Discord</a> or try using your own version of NebulosAPI on <a class="link link--dark" href="https://github.com/FILMA0010/Nebulos-API">Github</a>!</p>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer"><p style="margin-top: -10px;">© A <a href="https://nebulos.pro/" target="_blank" class="link link--light">Nebulos</a> Project.</p></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/docs/scribbler.js"></script>
+  </body>
+</html>
