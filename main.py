@@ -1,7 +1,7 @@
 # Copyright Nebulos Production 2024
 # This code is really messy i know. I am also normally a Javascript developer.
 # It turned out pretty good for that.
-from flask import Flask, jsonify, send_from_directory, render_template, render_template_string, send_file
+from flask import Flask, jsonify, send_from_directory, render_template, render_template_string, send_file, redirect, request
 import os
 import ssl
 import random
@@ -14,6 +14,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+#Force HTTPS
+@app.before_request
+def redirect_to_https():
+    if request.headers.get('X-Forwarded-Proto') == 'http':
+        url = request.url.replace('http://', 'https://', 1)
+        return redirect(url, code=301)
 
 #  _____ ______   ____  ______  _____
 # / ___/|      | /    ||      |/ ___/
